@@ -42,28 +42,28 @@
             border: none;
             box-shadow: 0px 0px 5px 3px rgba(0, 128, 128, 0.56);
             }
-            #addToDoBtn{
-                padding: 8px 20px;
-                border-radius: 10px;
-                background-color: rgb(167, 245, 245);
-                border-color: rgba(0,0,0,0.5);
-                margin: 0px 25px;
-            }
-            #addToDoBtn:hover{
-                border-color: rgba(255,255,255,0.5);
-               
-            }
-            .addToDo-container{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: fixed;
-                bottom: 30px;
-                right: 450px;
-            }
-            #deleteIcon{
-                height: 20px;
-            }
+        #addToDoBtn{
+            padding: 8px 20px;
+            border-radius: 10px;
+            background-color: rgb(167, 245, 245);
+            border-color: rgba(0,0,0,0.5);
+            margin: 0px 25px;
+        }
+        #addToDoBtn:hover{
+            border-color: rgba(255,255,255,0.5);  
+        }
+        .addToDo-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }   
+        #deleteIcon{
+            height: 20px;
+        }
         
     </style>
 </head>
@@ -78,12 +78,15 @@
         <div class="addToDo">
             <input type="text" placeholder="Add new to list" id="addNewCard">        
         </div>
-        <button id="addToDoBtn">Add </button>
+        <button id="addToDoBtn" onclick="addToCard()">Add </button>
     </div>
 
     <script>
-        let listArray=["ABC","PQR","XYZ"];
+        let listArray=["Make Tea and Coffee"];
         const todoContainerElement=document.getElementById('todo-container');
+
+        const addInputElement=document.getElementById('addNewCard');
+
         for(let i=0;i<listArray.length;i++){
             let listElement=listArray[i];
             todoContainerElement.innerHTML=todoContainerElement.innerHTML+`
@@ -92,6 +95,18 @@
             <img src="./images/delete.png" alt="delete-icon" id="deleteIcon">
             </div>`;
         }
+
+        const addToCard=()=>{
+            let addinput=addInputElement.value
+            listArray.push(addinput);
+            todoContainerElement.innerHTML=todoContainerElement.innerHTML+`
+            <div class="todo-container-card">
+            ${addinput}
+            <img src="./images/delete.png" alt="delete-icon" id="deleteIcon">
+            </div>`;
+            addInputElement.value="";
+        }
+
     </script>
 
 </body>

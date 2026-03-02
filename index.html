@@ -30,6 +30,9 @@
             border-radius: 10px;
             box-shadow: 0px 0px 10px 3px teal;
             font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         #addNewCard{
             background-color: white;
@@ -58,29 +61,17 @@
                 bottom: 30px;
                 right: 450px;
             }
+            #deleteIcon{
+                height: 20px;
+            }
         
     </style>
 </head>
 <body>
     <h1 id="main-heading">to-do appliation</h1>
 
-    <div class="todo-container">
-        <div class="todo-container-card">
-            dfg
-        </div>
-        <div class="todo-container-card">
-            dfg
-        </div>
-        <div class="todo-container-card">
-            dfg
-        </div>
-        <div class="todo-container-card">
-            dfg
-        </div>
-        <div class="todo-container-card">
-            dfg
-        </div>
-       
+    <div class="todo-container" id="todo-container">
+        
     </div>
 
     <div class="addToDo-container">
@@ -89,5 +80,19 @@
         </div>
         <button id="addToDoBtn">Add </button>
     </div>
+
+    <script>
+        let listArray=["ABC","PQR","XYZ"];
+        const todoContainerElement=document.getElementById('todo-container');
+        for(let i=0;i<listArray.length;i++){
+            let listElement=listArray[i];
+            todoContainerElement.innerHTML=todoContainerElement.innerHTML+`
+            <div class="todo-container-card">
+            ${listElement}
+            <img src="./images/delete.png" alt="delete-icon" id="deleteIcon">
+            </div>`;
+        }
+    </script>
+
 </body>
 </html>

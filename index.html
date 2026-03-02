@@ -99,7 +99,9 @@
         const addToCard=()=>{
             let addinput=addInputElement.value
             listArray.push(addinput);
-            todoContainerElement.innerHTML=todoContainerElement.innerHTML+`
+            if(addinput=="") return;
+
+            todoContainerElement.innerHTML+=`
             <div class="todo-container-card">
             ${addinput}
             <img src="./images/delete.png" alt="delete-icon" id="deleteIcon">

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do application</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+            background-color: #26CCC2;
+        }
+        #main-heading{
+            text-align: center;
+            color: white;
+            font-size: 60px;
+        }
+        .todo-container{
+            height: 375px;
+            overflow-y: scroll;
+        }
+        .todo-container-card{
+            background-color: white;
+            color: #216a6aaf;
+            height: fit-content;
+            width: 50%;
+            margin: 20px auto;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 3px teal;
+            font-size: 20px;
+        }
+        #addNewCard{
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px 20px;
+            width: 400px;
+            border: none;
+            box-shadow: 0px 0px 5px 3px rgba(0, 128, 128, 0.56);
+            }
+            #addToDoBtn{
+                padding: 8px 20px;
+                border-radius: 10px;
+                background-color: rgb(167, 245, 245);
+                border-color: rgba(0,0,0,0.5);
+                margin: 0px 25px;
+            }
+            #addToDoBtn:hover{
+                border-color: rgba(255,255,255,0.5);
+               
+            }
+            .addToDo-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                bottom: 30px;
+                right: 450px;
+            }
+        
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">to-do appliation</h1>
+
+    <div class="todo-container">
+        <div class="todo-container-card">
+            dfg
+        </div>
+        <div class="todo-container-card">
+            dfg
+        </div>
+        <div class="todo-container-card">
+            dfg
+        </div>
+        <div class="todo-container-card">
+            dfg
+        </div>
+        <div class="todo-container-card">
+            dfg
+        </div>
+       
+    </div>
+
+    <div class="addToDo-container">
+        <div class="addToDo">
+            <input type="text" placeholder="Add new to list" id="addNewCard">        
+        </div>
+        <button id="addToDoBtn">Add </button>
+    </div>
+</body>
+</html>
